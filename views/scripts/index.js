@@ -8215,12 +8215,10 @@
 	  function Statistics() {
 	    _classCallCheck(this, Statistics);
 
-	    console.log('Constructor');
 	    this.counters = {
 	      google: new _GoogleAnalytics2.default(),
 	      yandex: new _YaMetrika2.default()
 	    };
-	    console.log(this.counters.google.loaded);
 	  }
 
 	  _createClass(Statistics, [{
@@ -8344,11 +8342,11 @@
 	  }, {
 	    key: 'pageview',
 	    value: function pageview(page) {
-	      console.log('GA pageview sended');
 	      return this.loaded.then(function () {
 	        if (typeof window.ga === 'function') {
 	          window.ga('set', 'page', page);
 	          window.ga('send', 'pageview');
+	          console.log('GA pageview sended');
 	        }
 	      });
 	    }

@@ -67,11 +67,11 @@ export default class GoogleAnalytics {
   }
 
   pageview (page) {
-    console.log('GA pageview sended')
     return this.loaded.then(() => {
       if (typeof window.ga === 'function') {
         window.ga('set', 'page', page)
         window.ga('send', 'pageview')
+        console.log('GA pageview sended')
       }
     })
   }

@@ -22,43 +22,13 @@
     ga('create', 'UA-69093127-9', 'auto', {'allowLinker': true});
     ga('require', 'linker');
     ga('linker:autoLink', ['ga-devid-dkudrin.c9users.io', 'ga-catalog-dkudrin.c9users.io']);
+    ga('send', 'pageview', window.location.pathname);
   </script>
   
   <script>
-
-  	var experimentOneID = "Mn72vdoWQUiWW_POHXht-A";
-  	var experimentOneURL = "https://ga-devid-dkudrin.c9users.io/test.html";
-
-    var runContentExperiment = function(experimentID) {
-      var chosenVariation = cxApi.chooseVariation()
-      cxApi.setChosenVariation(chosenVariation, experimentID)
-      var pageVariations = [
-        function() {
-          alert('Original')
-          ga('send', 'pageview', window.location.pathname);
-        },  
-        function() {
-          alert('Experiment Variant 1')
-          window.location = 'https://ga-catalog-dkudrin.c9users.io/variant1.html'
-        },
-        function() {
-          alert('Experiment Variant 2')
-          window.location = 'https://ga-catalog-dkudrin.c9users.io/variant2.html'
-        }
-      ];
-      pageVariations[chosenVariation]()
-      ga('send', 'event', 'Content Experiment', 'View', experimentID, { 'nonInteraction': 1 });
-    }
-    var currentUrl = window.location;
-    console.log('currentUrl' + currentUrl)
-    console.log('expeOneURL' + experimentOneURL)
-    if (currentUrl == experimentOneURL) {
-      console.log('match')
-      runContentExperiment(experimentOneID);
-    } else {
-      console.log('not match')
-    }
+    alert('Experiment 1 Pageview sended')
   </script>
+  <p>Experiment 1</p>
   
  
   <!--<script type="text/javascript" src="scripts/index.js"></script>-->

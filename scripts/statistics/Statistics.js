@@ -4,12 +4,10 @@ import YaMetrika from './YaMetrika'
 export default class Statistics {
 
   constructor() {
-    console.log('Constructor')
       this.counters = {
       google: new GoogleAnalytics(),
       yandex: new YaMetrika()
     }
-    console.log(this.counters.google.loaded)
   }
 
   init () {
